@@ -1,0 +1,45 @@
+<div class="container mt-2">
+    <h3 class="text-center">Datos de la Poliza Actualmente</h3>
+    <div class="row text-center">
+        <div class="col-xs-6">
+            <label for="poliza">Poliza</label>
+                <input id="poliza"type="text" class="form-control" [(ngModel)]="polizarecibe.idpoliza"readonly/> 
+         </div>
+         <div class="col-xs-6">
+            <label for="empleado">Empleado</label>
+                <input   id="empleado"type="text" class="form-control" [(ngModel)]="empleadorecibe.nombre" readonly/> 
+        </div>
+        <div class="col-xs-6">
+            <label for="producto">Producto</label>
+                <input  id="producto" type="text" class="form-control" [(ngModel)]="productorecibe.nombre" readonly /> 
+        </div>
+        <div class="col-xs-6">
+            <label for="cantidad">Cantidad</label>
+                <input id="cantidad" type="text" class="form-control" [(ngModel)]="polizarecibe.cantidad " readonly /> 
+        </div>
+        <div class="col-xs-6">
+            <label for="fecha">Fecha de registro</label>
+                <input id="fecha" type="text" class="form-control" [(ngModel)]="polizarecibe.fecha " readonly /> 
+        </div>
+    </div>
+    <h3 class="text-center">Actualizar Poliza</h3>
+    <form (ngSubmit)="ActualizaPoliza()" >        
+        <div class="mb-3">
+            <label for="Empleado" class="form-label">Empleado</label>          
+            <select class="form-control" name="Empleado" [(ngModel)]="Empleado" (change)="onEmpleado($event)">
+                <option  class="text-center" [value]="empleado.idempleado" *ngFor="let empleado of Empleado">{{empleado.nombre}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="Productos" class="form-label">Producto</label>          
+            <select class="form-control" id="Productos" name="Productos" [(ngModel)]="Inventario" ng-init="Productos='7'" (change)="onProducto($event)">
+                <option class="text-center" [value]="Inventario.sku" *ngFor="let Inventario of Inventario">{{Inventario.nombre}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="cantidad" class="form-label">Cantidad</label>
+            <input type="number" class="form-control" id="cantidad" name="cantidad" [(ngModel)]="poliza.cantidad" required>
+        </div>                       
+        <button type="submit" class="btn btn-outline-success">Actualizar</button>
+    </form>
+</div>

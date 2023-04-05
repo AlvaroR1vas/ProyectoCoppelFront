@@ -1,0 +1,22 @@
+<div class="container mt-2">
+    <h3 class="text-center">Registrar Poliza</h3>
+    <form (ngSubmit)="GuardaPoliza()" >        
+        <div class="mb-3">
+            <label for="Empleado" class="form-label">Empleado</label>          
+            <select class="form-control" name="miselect" [(ngModel)]="Empleado" (change)="onEmpleado($event)">
+                <option  class="text-center" [value]="empleado.idempleado" *ngFor="let empleado of Empleado">{{empleado.nombre}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="Producto" class="form-label">Producto</label>          
+            <select class="form-control" name="miselect2" [(ngModel)]="Inventario" (change)="onProducto($event)">
+                <option class="text-center" [value]="Inventario.sku" *ngFor="let Inventario of Inventario">{{Inventario.nombre}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="apellido" class="form-label">Cantidad</label>
+            <input type="number" class="form-control" id="Cantidad" name="Cantidad" [(ngModel)]="poliza.cantidad" required>
+        </div>                
+        <button type="submit" class="btn btn-outline-success">Agregar</button>
+    </form>
+</div>

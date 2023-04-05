@@ -1,0 +1,25 @@
+<div class="container mt-3">
+    <h2 class="text-center">Lista de Productos</h2>
+    <table  class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="text-center" scope="col">Codigo</th>
+            <th class="text-center" scope="col">Descripcion</th>
+            <th  class="text-center" scope="col">Cantidad</th>
+            <th  class="text-center" scope="col">Acciones</th>
+
+          </tr>
+        </thead>
+        <tbody>
+        <tr  *ngFor="let inventarios of Productos">
+            <th  class="text-center" scope="row">{{inventarios.sku}}</th>
+            <td class="text-center">{{inventarios.nombre}}</td>
+            <td class="text-center">{{inventarios.cantidad}}</td> 
+            <td class="text-center"><button (click)="EliminarInventario(inventarios.sku,inventarios)" class="btn btn-danger">Eliminar</button>
+              <a>&nbsp; &nbsp;</a>
+              <a routerLink="/actualizar-inventario/{{inventarios.sku}}"class="btn btn-primary">Actualizar</a>            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    

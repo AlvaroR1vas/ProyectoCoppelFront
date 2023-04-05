@@ -1,0 +1,26 @@
+<div class="container mt-3">
+<h2 class="text-center">Lista de empleados</h2>
+<table  class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center" scope="col">Num Empleado</th>
+        <th class="text-center" scope="col">Nombre</th>
+        <th class="text-center" scope="col">Apellido</th>
+        <th class="text-center" scope="col">Puesto</th>
+        <th class="text-center" scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let empleados of empleados">
+        <th  class="text-center" scope="row">{{empleados.idempleado}}</th>
+        <td class="text-center">{{empleados.nombre}}</td>
+        <td class="text-center">{{empleados.apellido}}</td>
+        <td class="text-center">{{empleados.puesto}}</td>
+        <td class="text-center"><button (click)="eliminarEmpleado(empleados.idempleado,empleados)" class="btn btn-danger">Eliminar</button>
+        <a>&nbsp; &nbsp;</a>
+        <a routerLink="/actualizar-empleado/{{empleados.idempleado}}"class="btn btn-primary">Actualizar</a>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

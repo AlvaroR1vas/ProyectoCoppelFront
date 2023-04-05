@@ -1,0 +1,19 @@
+<div class="container mt-2">
+    <h3 class="text-center">Registrar Producto</h3>
+    <form (ngSubmit)="ActualizarInventario()">
+        <div class="mb-3">
+            <label for="sku" class="form-label">SKU</label>
+            <input type="text" class="form-control" id="sku" name="sku" [(ngModel)]="inventario.sku" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre Producto</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="inventario.nombre" required>
+        </div>
+        <div class="mb-3">
+            <label for="cantidad" class="form-label">Cantidad</label>
+            <input type="number" class="form-control" id="cantidad" name="cantidad" [(ngModel)]="inventario.cantidad" required>
+        </div>
+
+        <button type="submit" class="btn btn-outline-success">Actualizar</button>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+<div class="container mt-3">
+    <h2 class="text-center">Lista de Polizas</h2>
+    <table class="table table-bordered">
+        <thead>
+          <tr >
+            <th class="text-center" scope="col">ID Poliza</th>
+            <th class="text-center" scope="col">Num Empleado</th>
+            <th class="text-center" scope="col">SKU</th>
+            <th class="text-center" scope="col">Cantidad</th>
+            <th class="text-center" scope="col">Fecha</th>
+            <th class="text-center" scope="col">Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let poliza of Poliza">
+            <th class="text-center" scope="row">{{poliza.idpoliza}}</th>
+            <td class="text-center">{{poliza.empleadogenero}} </td>
+            <td class="text-center">{{poliza.sku}}</td>
+            <td class="text-center">{{poliza.cantidad}}</td>
+            <td class="text-center">{{poliza.fecha | date:'yyyy-MM-dd'}}</td>
+            <td class="text-center"><button (click)="eliminarPoliza(poliza.idpoliza,poliza)" class="btn btn-danger">Eliminar</button>
+              <a>&nbsp; &nbsp;</a>
+              <a routerLink="/actualizar-poliza/{{poliza.idpoliza}}"class="btn btn-primary">Actualizar</a>
+          </tr>
+        </tbody>
+      </table>
+    </div>
