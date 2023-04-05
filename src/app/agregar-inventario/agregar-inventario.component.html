@@ -3,11 +3,11 @@
     <form (ngSubmit)="guardarInventario()">
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre Producto</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="inventario" required>
+            <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="inventario.nombre" required>
         </div>
         <div class="mb-3">
             <label for="cantidad" class="form-label">Cantidad</label>
-            <input type="number" class="form-control" id="cantidad" name="cantidad" [(ngModel)]="inventario" required>
+            <input type="number" class="form-control" id="cantidad" name="cantidad" [(ngModel)]="inventario.cantidad" required>
         </div>
 
         <button type="submit" class="btn btn-outline-success">Agregar</button>

@@ -30,7 +30,7 @@ export class ActualizarEmpleadoComponent {
  
   Actualiza(): void{  
     this.EmpleadosService.actualizarEmpleado(this.empleado).subscribe(data => {
-      Swal.fire('Producto Actualizado', `Producto ${this.empleado.nombre} ha sido actualizado con éxito!`, 'success');
+      Swal.fire('Empleado Actualizado', `Empleado ${this.empleado.nombre} ha sido actualizado con éxito!`, 'success');
       this.router.navigate(['/empleados']);    
     });
   }
