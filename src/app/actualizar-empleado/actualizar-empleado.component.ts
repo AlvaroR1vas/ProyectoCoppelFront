@@ -17,7 +17,7 @@ export class ActualizarEmpleadoComponent {
 
 
   constructor(private EmpleadosService:EmpleadosService,private router:Router,private route:ActivatedRoute) { 
-    
+  
   }
   
   ngOnInit():void { 
@@ -25,24 +25,13 @@ export class ActualizarEmpleadoComponent {
     this.id = this.route.snapshot.params['id'];
     this.EmpleadosService.obtenerEmpleado(this.id).subscribe(data => {
       this.empleado = data;
-    });   
+    }); 
   }
-  /*Actualiza():void{
+ 
+  Actualiza(): void{  
     this.EmpleadosService.actualizarEmpleado(this.empleado).subscribe(data => {
-        Swal.fire('Empleado actualizado',`El empleado ${this.empleado.nombre} ha sido actualizado con exito`,`success`);
-        this.router.navigate(['/empleados']);
-    },error => console.log(error));
-  }*/
-
-
-  irAlaListaDeEmpleados(){
-    this.router.navigate(['/empleados']);
-    Swal.fire('Empleado actualizado',`El empleado ${this.empleado.nombre} ha sido actualizado con exito`,`success`);
-  }
-
-  Actualiza(){
-    this.EmpleadosService.actualizarEmpleado(this.empleado).subscribe(dato => {
-      this.irAlaListaDeEmpleados();
-    },error => console.log(error));
+      Swal.fire('Producto Actualizado', `Producto ${this.empleado.nombre} ha sido actualizado con éxito!`, 'success');
+      this.router.navigate(['/empleados']);    
+    });
   }
 }

@@ -1,6 +1,6 @@
 <div class="container mt-2">
     <h3 class="text-center">Actualiza Empleado</h3>
-    <form (submit)="Actualiza()" formGroup="Miformulario" >
+    <form (submit)="Actualiza()">
         <div class="mb-3">
             <label for="idempleado" class="form-label">Numero Empleado</label>
             <input type="text" class="form-control" id="idempleado" name="idempleado" [(ngModel)]="empleado.idempleado" readonly>
@@ -17,6 +17,6 @@
             <label for="puesto" class="form-label">Puesto</label>
             <input type="text" class="form-control" id="puesto" name="puesto" [(ngModel)]="empleado.puesto" required>
         </div>
-        <button type="submit" class="btn btn-outline-success">Agregar</button>
+        <button type="submit" class="btn btn-outline-success">Actualizar</button>
     </form>
 </div>

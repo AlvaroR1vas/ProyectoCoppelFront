@@ -31,6 +31,6 @@ export class EmpleadosService {
   }
   actualizarEmpleado(empleado:Empleado):Observable<Object>{
     return this.HttpClient.put(`${this.baseUrl3}/${empleado.idempleado}`,empleado);
-
   }
+
 }
